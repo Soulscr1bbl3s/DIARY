@@ -1,1 +1,49 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Scribbles Animation</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .stick-figure {
+            position: absolute;
+            left: 100%;
+            white-space: nowrap;
+            font-size: 4em;
+            color: white;
+            animation: walk 8s linear forwards;
+        }
+        .text {
+            position: absolute;
+            left: 100%;
+            white-space: nowrap;
+            font-size: 2em;
+            color: white;
+            animation: moveText 8s 3s linear forwards; /* Adjust timing for text */
+        }
+        @keyframes walk {
+            0% { left: 100%; }
+            50% { left: 50%; } /* Stick figure moves to the center */
+            100% { left: -10%; } /* Stick figure exits the screen */
+        }
+        @keyframes moveText {
+            0% { left: 100%; }
+            50% { left: 50%; } /* Text moves to center behind stick figure */
+            100% { left: -60%; } /* Text follows stick figure off the screen */
+        }
+    </style>
+</head>
+<body>
+    <div class="stick-figure">🚶</div>
+    <div class="text">Presenting: Soul Scribbles</div>
+</body>
+</html>
