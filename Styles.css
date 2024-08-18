@@ -1,1 +1,79 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
 
+/* Text Fade-in and Fade-out */
+#presentation-text {
+    font-size: 24px;
+    opacity: 0;
+    animation: fadeInOut 4s ease-in-out;
+}
+
+/* Ballerina Container */
+#ballerina-container {
+    position: absolute;
+    bottom: 20px;
+    width: 50px;
+    height: 100px;
+}
+
+/* Ballerina Styling */
+#ballerina {
+    width: 10px;
+    height: 50px;
+    background-color: white;
+    position: relative;
+    animation: spin 4s linear infinite, tiptoe 2s ease-in-out infinite alternate;
+}
+
+/* Arms of the Ballerina */
+#ballerina::before, #ballerina::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    top: 10px;
+}
+
+/* Left Arm */
+#ballerina::before {
+    left: -20px;
+    transform: rotate(45deg);
+}
+
+/* Right Arm */
+#ballerina::after {
+    right: -20px;
+    transform: rotate(-45deg);
+}
+
+/* Fade-in and Fade-out Animation */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Spin Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tiptoe Animation */
+@keyframes tiptoe {
+    0% { bottom: 0; }
+    100% { bottom: 10px; }
+}
